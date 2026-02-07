@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-coal: #0a0a0a;
+  --color-iron: #1a1a1a;
+  --color-steel: #262626;
+  --color-zinc: #404040;
+  --color-ash: #a3a3a3;
+  --color-smoke: #e5e5e5;
+  --color-snow: #ffffff;
+  
+  /* Typography */
+  --font-display: "Clash Display", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer components {
+  /* Layout */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Glassmorphism Effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-8 py-4 bg-emerald-400 text-coal font-mono font-bold hover:bg-emerald-500 transition-all flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 border-2 border-emerald-400 text-emerald-400 font-mono font-bold hover:bg-emerald-400/10 transition-all;
+  }
+
+  /* Text Effects */
+  .gradient-text {
+    @apply bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  /* Cards */
+  .project-card {
+    @apply relative overflow-hidden bg-iron border border-zinc/50 hover:border-emerald-400/50 transition-all duration-500;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-coal text-smoke font-mono;
+  }
+}
+
+/* Background Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(52, 211, 153, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
